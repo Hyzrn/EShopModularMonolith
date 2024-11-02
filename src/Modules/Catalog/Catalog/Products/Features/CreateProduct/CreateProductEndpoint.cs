@@ -1,7 +1,6 @@
 namespace Catalog.Products.Features.CreateProduct;
 
 public sealed record CreateProductRequest(ProductDto Product);
-
 public sealed record CreateProductResponse(Guid Id);
 
 public class CreateProductEndpoint : ICarterModule

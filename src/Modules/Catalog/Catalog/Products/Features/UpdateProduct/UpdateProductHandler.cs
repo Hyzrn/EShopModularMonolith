@@ -8,7 +8,8 @@ public sealed record UpdateProductResult(bool isSuccess);
 public class UpdateProductHandler(CatalogDbContext dbContext) 
     : ICommandHandler<UpdateProductCommand, UpdateProductResult>
 {
-    public async Task<UpdateProductResult> Handle(UpdateProductCommand command, 
+    public async Task<UpdateProductResult> Handle(
+        UpdateProductCommand command, 
         CancellationToken cancellationToken)
     {
         var product = await dbContext.Products
