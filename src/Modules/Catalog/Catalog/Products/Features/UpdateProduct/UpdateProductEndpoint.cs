@@ -20,6 +20,6 @@ public class UpdateProductEndpoint : ICarterModule
         .ProducesProblem(StatusCodes.Status400BadRequest)
         .ProducesProblem(StatusCodes.Status404NotFound)
         .WithSummary("Update Product")
-        .WithDescription("Update Product");;
+        .WithDescription("Update Product");
     }
 }
