@@ -3,7 +3,7 @@ namespace Catalog.Products.Features.DeleteProduct;
 public sealed record DeleteProductCommand(Guid productId) 
     : ICommand<DeleteProductResult>;
 
-public sealed record DeleteProductResult(bool isSuccess);
+public sealed record DeleteProductResult(bool IsSuccess);
     
 public class DeleteProductHandler(CatalogDbContext dbContext) 
     : ICommandHandler<DeleteProductCommand, DeleteProductResult>

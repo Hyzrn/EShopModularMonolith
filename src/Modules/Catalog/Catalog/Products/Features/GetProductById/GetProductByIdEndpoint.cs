@@ -2,7 +2,7 @@ using Catalog.Products.Features.GetProducts;
 
 namespace Catalog.Products.Features.GetProductById;
 
-public record GetProductByIdResponse(ProductDto ProductDto);
+public sealed record GetProductByIdResponse(ProductDto Product);
 
 public class GetProductByIdEndpoint : ICarterModule
 {
@@ -11,7 +11,7 @@ public class GetProductByIdEndpoint : ICarterModule
         app.MapGet("/products/{id}", async (Guid id, ISender sender) =>
         {
             var result = await sender.Send(new GetProductByIdQuery(id));
-            var response = result.Adapt<GetProductResponse>();
+            var response = result.Adapt<GetProductByIdResponse>();
 
             return Results.Ok(response);
         })

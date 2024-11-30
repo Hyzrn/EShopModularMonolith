@@ -3,7 +3,7 @@ namespace Catalog.Products.Features.UpdateProduct;
 public sealed record UpdateProductCommand(ProductDto Product)
     : ICommand<UpdateProductResult>;
 
-public sealed record UpdateProductResult(bool isSuccess);
+public sealed record UpdateProductResult(bool IsSuccess);
     
 public class UpdateProductHandler(CatalogDbContext dbContext) 
     : ICommandHandler<UpdateProductCommand, UpdateProductResult>
